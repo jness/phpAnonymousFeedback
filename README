@@ -1,0 +1,39 @@
+PHP Anonymous Feedback Application
+
+ REQUIREMENTS:
+  
+   PHP-5.x
+   MySQL 5.x
+
+ INSTALLATION:
+
+ [mysql]
+  
+   Create a new MySQL Database named 'feedback'
+
+	mysql> create database feedback
+
+   Create a new MySQL user
+	
+	mysql> GRANT ALL PRIVILEGES ON feedback.* TO feedback@localhost IDENFIED BY 'YOURPASSWORD';
+
+   Use the feedback.sql MySQL Dump to create the table structure
+
+	mysql> use feedback
+	mysql> \. feedback.sql
+
+  [web]
+
+    Place the "feedback" folder in do your Document Root to allow it accessiablity via your Web server.
+
+    Edit the feedback/config.php and feedback/mysqlconnect.php to match your settings.
+
+    Access the site at http://domain/feedback/login.php and use the password "test", from here you should change the password
+    at the top.
+
+ FEATURES:
+
+    All entries are stored in database with feedback fully encrypted, the 'key' used to encrypt the data is stored in
+    feedback/.htkey
+
+    
